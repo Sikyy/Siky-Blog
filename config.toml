@@ -2,3 +2,26 @@ baseURL = '/'
 languageCode = 'en-us'
 title = 'Siky’s Blog'
 theme = "paper"
+
+[params]
+  color = 'linen'
+
+  twitter = 'YYYMALICIOUS'
+  github = 'Sikyy'
+
+  avatar = 'https://i.miji.bid/2023/12/29/bb5931d12419863b0ee03c4f41887c73.jpeg'
+  name = 'Siky'
+  bio = 'Siky for me'
+
+[menu]
+
+  [[menu.main]]
+    identifier = "about"
+    name = "关于"
+    url = "/about/"
+    weight = 10
+  [[menu.main]]
+    identifier = "contact"
+    name = "友链"
+    url = "/contact/"
+    weight = 10
