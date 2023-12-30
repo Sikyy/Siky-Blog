@@ -17,11 +17,16 @@ theme = "paper"
 
   [[menu.main]]
     identifier = "about"
-    name = "关于"
+    name = "About"
     url = "/about/"
     weight = 10
   [[menu.main]]
     identifier = "contact"
-    name = "友链"
+    name = "Links"
     url = "/contact/"
+    weight = 10
+  [[menu.main]]
+    identifier = "summary"
+    name = "Summary"
+    url = "/summary/"
     weight = 10
