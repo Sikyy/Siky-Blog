@@ -30,3 +30,8 @@ theme = "paper"
     name = "Summary"
     url = "/summary/"
     weight = 10
+  [[menu.main]]
+    identifier = "project"
+    name = "Project"
+    url = "/project/"
+    weight = 10

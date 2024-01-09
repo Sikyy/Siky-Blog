@@ -1,5 +1,5 @@
 +++
-title = 'About'
+title = '关于我'
 date = 2023-12-30T15:00:00+08:00
 author = "Siky"
 +++
