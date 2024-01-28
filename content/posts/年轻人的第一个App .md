@@ -20,7 +20,7 @@ GitHub：https://github.com/Sikyy/wails-NetPackage
 
 最后把图标调整为适合的样子，然后把创建的硬盘空间弹出
 
-打开磁盘工具点击菜单栏`映像`=>`转换`，选择刚才dmg文件，命名后点击转换就好了
+打开磁盘工具点击菜单栏 映像=>转换，选择刚才dmg文件，命名后点击转换就好了
 
 我临时凑了几张图片长这个样子
 
@@ -48,10 +48,10 @@ Wails 运行时提供了一个统一的事件系统，其中事件可以由 Go �
 
 相当于一个很方便的数据调用工具（超级超级方便）
 
-这里会需要先银入**"github.com/wailsapp/wails/v2/pkg/runtime"包**
+这里会需要先引入"github.com/wailsapp/wails/v2/pkg/runtime"包
 
-```jsx
-**"github.com/wailsapp/wails/v2/pkg/runtime"**
+```go
+"github.com/wailsapp/wails/v2/pkg/runtime"
 ```
 
 以下是我的例子：
@@ -81,11 +81,13 @@ func (a *App) CaptureTraffic() {
 
 此方法触发指定的事件。 可选数据可以与事件一起传递。 这将触发任意事件侦听器。
 
+```go
 Go: `EventsEmit(ctx context.Context, eventName string, optionalData ...interface{})`
 
 JS: `EventsEmit(eventName: string, ...optionalData: any)`
 
 runtime.EventsEmit(a.ctx, "captureTraffic", tabelinfo)
+```
 
 传入一个ctx，“事件名称”，任何类型的数据
 
@@ -97,14 +99,16 @@ runtime.EventsEmit(a.ctx, "captureTraffic", tabelinfo)
 
 此方法为给定的事件名称设置一个侦听器。 当 [触发指定事件](https://wails.io/zh-Hans/docs/next/reference/runtime/events#%E8%A7%A6%E5%8F%91%E6%8C%87%E5%AE%9A%E4%BA%8B%E4%BB%B6) 名为 `eventName` 类型的事件时，将触发回调。 与触发事件一起发送的任何其他数据都将传递给回调。 它返回 一个函数来取消侦听器。
 
+```go
 Go: `EventsOn(ctx context.Context, eventName string, callback func(optionalData ...interface{})) func()`
 
 JS: `EventsOn(eventName string, callback function(optionalData?: any)): () => void`
+```
 
 在调用之前需要import进来
 
 ```jsx
-***import* { EventsOn } *from* '../../wailsjs/runtime/runtime';**
+import* { EventsOn } *from* '../../wailsjs/runtime/runtime';
 ```
 
 ```jsx
