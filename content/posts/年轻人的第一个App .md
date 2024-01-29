@@ -115,11 +115,13 @@ func (a *App) CaptureTraffic() {
 
 此方法触发指定的事件。 可选数据可以与事件一起传递。 这将触发任意事件侦听器。
 
+```java
+Go:`EventsEmit(ctx context.Context, eventName string, optionalData ...interface{})`
+
+JS:`EventsEmit(eventName: string, ...optionalData: any)`
+
+```
 ```go
-Go: `EventsEmit(ctx context.Context, eventName string, optionalData ...interface{})`
-
-JS: `EventsEmit(eventName: string, ...optionalData: any)`
-
 runtime.EventsEmit(a.ctx, "captureTraffic", tabelinfo)
 ```
 
