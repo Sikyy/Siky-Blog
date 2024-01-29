@@ -32,9 +32,43 @@ GitHub：https://github.com/Sikyy/wails-NetPackage
 
 打包大小很小，上手很快
 
+使用原生 webview 组件作为前端（而不是嵌入式浏览器）
+
+自带的Wails Build可以自动构建当前系统所对应的二进制文件和应用
+
 简体中文文档支持不错
 
+能自动生成对应 Go 结构体的 TypeScript 模型
+
 对Golang非常友好，支持Go方法在前端直接调用
+
+我还去看了他们后续的V3版本的Blog，后续的更新主要是在多窗口管理上，由于V2版本是由于Wails的运行特性所导致的没有主窗口的句柄，以至于Wails塞入了一套运行时API包括：
+
+- 窗口管理
+- 对话框
+- 菜单
+- 事件
+- 日志
+
+但是由于调用他们会需要传递一套ctx，他们认为这个东西对人不是很友好而且繁琐，于是我看到了他们预设的新的V3 API
+```go
+func main() {
+    app := wails.NewApplication(options.App{})
+    myWindow := app.NewWindow(options.Window{})
+    myWindow.SetTitle("My Window")
+    myWindow.On(events.Window.Close, func() {
+        app.Quit()
+    })
+    myWindow2 := app.NewWindow(options.Window{})
+    myWindow2.SetTitle("My Window 2")
+    myWindow2.On(events.Window.Close, func() {
+        app.Quit()
+    })
+    app.Run()
+}
+```
+
+这实在太帅了
 
 不足点：
 
