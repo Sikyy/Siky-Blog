@@ -57,7 +57,7 @@ docker buildx create --use
 docker buildx create --use --name mybuilder --platform linux/amd64,linux/arm64
 ```
 
-创建完成之后，我们进行切换构建器，切换之后，我们构建的镜像默认就有**`linux/amd64`** 和 **`linux/arm64`**的了
+创建完成之后，我们进行切换构建器，切换之后，我们构建的镜像默认就有 **`linux/amd64`** 和 **`linux/arm64`** 的了
 
 ```docker
 docker buildx use mybuilder
