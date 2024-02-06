@@ -13,6 +13,8 @@ M：指一种线程的抽象（Machine）
 
 P：指调度器（Processor）
 
+
+
 GMP调度大致可以简化为这样的关系
 
 Goroutine ———调度器——— 线程
@@ -38,7 +40,6 @@ go/src/runtime/runtime2.go
 
 主要字段有以下几种
 
-在
 
 ```go
 type g struct {
@@ -60,7 +61,6 @@ type m struct {
 }
 ```
 
-在m中，我们可以看到有一个g0
 
 ```go
 type p struct {
